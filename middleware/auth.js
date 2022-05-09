@@ -10,7 +10,7 @@ module.exports = {
     if (req.isAuthenticated()) {
       res.redirect("/dashboard");
     } else {
-      return next;
+      return next();
     }
   },
 };

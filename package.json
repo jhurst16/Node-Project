@@ -18,16 +18,20 @@
   },
   "homepage": "https://github.com/jhurst16/Node-Project#readme",
   "dependencies": {
-    "connect-mongo": "^4.6.0",
+    "connect-mongo": "^3.2.0",
     "dotenv": "^16.0.0",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.5",
     "express-session": "^1.17.2",
     "method-override": "^3.0.0",
     "moment": "^2.29.3",
-    "mongoose": "^6.3.2",
+    "mongoose": "^6.3.3",
     "morgan": "^1.10.0",
     "passport": "^0.5.2",
     "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.16"
   }
 }

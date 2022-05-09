@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const exphbs = require("express-handlebars");
 const passport = require("passport");
 const session = require("express-session");
-const MongoStore = require("connect-mongo");
+const MongoStore = require("connect-mongo")(session);
 const connectDB = require("./config/db");
 
 // load config
@@ -31,11 +31,10 @@ app.set("view engine", ".hbs");
 //Session(must be above passport middleware)
 app.use(
   session({
-    secret: "no newcomers",
-    cookie: { maxAge: 60000 },
+    secret: "keyboard cat",
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
   })
 );
 
