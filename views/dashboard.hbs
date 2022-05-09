@@ -1,1 +1,27 @@
-<h1>Dashboard</h1>
+<h6>Dashboard</h6>
+<h3>Hey {{name}}!</h3>
+<p>Here are your tasks</p>
+{{#if stories}}
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each tasks}}
+        <tr>
+          <td><a href="/tasks/{{_id}}"></a>{{title}}</td>
+          <td>{{createdAt}}</td>
+          <td><span class="dash-status">{{status}}</span></td>
+          <td></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>You have not created any tasks</p>
+{{/if}}
